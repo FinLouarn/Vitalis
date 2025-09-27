@@ -1,0 +1,94 @@
+<!doctype html>
+<html style="height: 100%; overflow: hidden">
+  <body style="height: 100%; margin: 0; display: flex; flex-direction: column">
+    <div style="flex-grow: 1; position: relative">
+      <iframe
+        id="embedded-human"
+        frameborder="0"
+        style="aspect-ratio: 4 / 3; width: 100%; height: 100%"
+        allowfullscreen="true"
+        loading="lazy"
+        src="https://human.biodigital.com/viewer/?id=6T45&ui-anatomy-descriptions=true&ui-anatomy-pronunciations=true&ui-anatomy-labels=true&ui-audio=true&ui-chapter-list=false&ui-fullscreen=true&ui-help=true&ui-info=false&ui-label-list=true&ui-layers=true&ui-skin-layers=true&ui-loader=circle&ui-media-controls=full&ui-menu=true&ui-nav=true&ui-search=true&ui-tools=true&ui-tutorial=false&ui-undo=true&ui-whiteboard=true&initial.none=true&disable-scroll=false&uaid=MFJPG&paid=o_1cf53226"
+      ></iframe>
+    </div>
+
+    <div
+      style="
+        height: 30%;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-top: 1px solid #ccc;
+        display: flex;
+        flex-direction: column;
+      "
+    >
+      <div
+        id="transcript-area"
+        style="
+          flex-grow: 1;
+          overflow-y: auto;
+          background-color: white;
+          padding: 10px;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          font-family: sans-serif;
+          font-size: 14px;
+        "
+      >
+        <p><strong>System:</strong> Initializing Voice AI interface...</p>
+      </div>
+
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Type your response or click Start Voice..."
+        style="
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          margin-right: 10px;
+          flex-grow: 1;
+        "
+      />
+
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 10px;
+        "
+      >
+        <button
+          id="start-voice-btn"
+          style="
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          🎙️ Start Voice
+        </button>
+        <button
+          id="send-text-btn"
+          style="
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Send Text
+        </button>
+      </div>
+    </div>
+
+    <script src="https://developer.biodigital.com/builds/api/human-api-3.0.0.min.js"></script>
+    <script src="/public/client.js"></script>
+  </body>
+</html>
