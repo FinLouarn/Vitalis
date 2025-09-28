@@ -1,5 +1,5 @@
 import tkinter as tk
-rom tkinter import filedialog
+from tkinter import filedialog
 import threading
 import mediapipe as mp
 from mediapipe import solutions
