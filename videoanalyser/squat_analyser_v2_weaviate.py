@@ -1,5 +1,5 @@
-#import tkinter as tk
-#from tkinter import filedialog
+import tkinter as tk
+rom tkinter import filedialog
 import threading
 import mediapipe as mp
 from mediapipe import solutions
@@ -353,41 +353,41 @@ class SquatAnalyser():
                 json.dump(enriched_report, f, indent=2)
 
 
-#class SquatAnalyserApp:
-#    def __init__(self, root):
-#        self.root = root
-#        self.root.title("Squat Analysis")
-#        self.root.geometry("300x150")
+class SquatAnalyserApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Squat Analysis")
+        self.root.geometry("300x150")
         
-#        self.label = tk.Label(root, text="Choose Input Method:")
-#        self.label.pack(pady=10)
+        self.label = tk.Label(root, text="Choose Input Method:")
+        self.label.pack(pady=10)
 
-#        self.webcam_button = tk.Button(root, text="Webcam", command=self.start_webcam_analysis)
-#        self.webcam_button.pack(pady=5)
+        self.webcam_button = tk.Button(root, text="Webcam", command=self.start_webcam_analysis)
+        self.webcam_button.pack(pady=5)
 
-#        self.video_button = tk.Button(root, text="Video File", command=self.choose_video_file)
-#        self.video_button.pack(pady=5)
+        self.video_button = tk.Button(root, text="Video File", command=self.choose_video_file)
+        self.video_button.pack(pady=5)
 
-#    def start_webcam_analysis(self):
-#        analyser = SquatAnalyser(mode=0)
-#        threading.Thread(target=analyser.process_frame).start()
+    def start_webcam_analysis(self):
+        analyser = SquatAnalyser(mode=0)
+        threading.Thread(target=analyser.process_frame).start()
 
-#    def choose_video_file(self):
-#        file_path = filedialog.askopenfilename()
-#        if file_path:
-#            save_path = filedialog.asksaveasfilename(defaultextension=".mp4",
-#                                                    filetypes=[("MP4 files", "*.mp4")])
-#            if save_path:
-#                analyser = SquatAnalyser(mode=1, file_path=file_path)
-#                threading.Thread(target=lambda: analyser.process_frame(save_path=save_path)).start()
+    def choose_video_file(self):
+        file_path = filedialog.askopenfilename()
+        if file_path:
+            save_path = filedialog.asksaveasfilename(defaultextension=".mp4",
+                                                    filetypes=[("MP4 files", "*.mp4")])
+            if save_path:
+                analyser = SquatAnalyser(mode=1, file_path=file_path)
+                threading.Thread(target=lambda: analyser.process_frame(save_path=save_path)).start()
 
-
-"""if __name__ == "__main__":
-    root = tk.Tk()
-    app = SquatAnalyserApp(root)
-    root.mainloop()"""
 
 if __name__ == "__main__":
+    root = tk.Tk()
+    app = SquatAnalyserApp(root)
+    root.mainloop()
+
+'''if __name__ == "__main__":
     video_path = "IMG_2250.MOV"
     analyser = SquatAnalyser(mode=1, file_path=video_path)
-    analyser.process_frame(save_path="processed_video.mp4")
+    analyser.process_frame(save_path="processed_video.mp4")'''
