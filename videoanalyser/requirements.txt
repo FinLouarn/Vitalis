@@ -1,4 +1,4 @@
-mediapipe
-opencv-python
 numpy
-tk
+opencv-python
+mediapipe
+weaviate-client
